@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Title to H2",
+  "version": "1.0",
+  "description": "Adds an h2 tag with the title of the webpage",
+  "permissions": [
+    "activeTab",
+    "declarativeContent"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
