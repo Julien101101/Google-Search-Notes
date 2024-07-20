@@ -1,22 +1,27 @@
 {
   "manifest_version": 3,
-  "name": "Title to H2",
-  "version": "1.0",
-  "description": "Adds an h2 tag with the title of the webpage",
+  "name": "Google Search Notes",
+  "version": "1.0.0",
+  "description": "A Chrome extension to take and find notes on Google searches",
   "permissions": [
-    "activeTab",
-    "declarativeContent"
+    "storage",
+    "tabs",
+    "activeTab"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["script.js"]
+      "matches": ["https://www.google.com/*"],
+      "js": ["content.js"]
     }
   ],
-  "icons": {
-    "48": "logo.png"
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "logo.png"
   }
 }
+
+
+
